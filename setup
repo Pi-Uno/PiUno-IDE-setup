@@ -1,0 +1,15 @@
+#!/bin/bash
+# Appreciation and full credit to wyolum.com for providing the original file
+# This is a simple update of the wyolum original to support the Pi-Uno
+cp avrdude /usr/bin/avrdude
+cp avrdude /usr/share/arduino/hardware/tools
+cp avrdude.conf  /usr/share/arduino/hardware/tools
+cp boards.txt  /usr/share/arduino/hardware/arduino
+sed -i'bk' -e's/console=ttyAMA0,115200.//' -e's/kgdboc=tty.*00.//'  /boot/cmdline.txt
+sed -i'bk' -e'/T0.*ttyAMA0.*vt100/s/T0/#T0/' /etc/inittab
+rm /etc/inittabbk
+cp 80-pi-uno.rules /etc/udev/rules.d/80-alamode.rules
+chown root /usr/bin/avrdude /usr/share/arduino/hardware/tools/avrdude
+chgrp root /usr/bin/avrdude /usr/share/arduino/hardware/tools/avrdude
+chmod a+s /usr/bin/avrdude /usr/share/arduino/hardware/tools/avrdude
+
