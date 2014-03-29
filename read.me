@@ -3,11 +3,11 @@ PiUno-IDE-setup  Folder  GitHub  read.me File
 Raspberry Pi  www.raspberrypi.org
 Pi-Uno  www.pi-uno.co.uk
 
-The 'setup' script updates the Raspbery Pi standard Arduino IDE (1.0.1)
-to implement ISP programing of the Pi-Uno Atmega328P using the Pi GPIO serial port.
-(Nothing else required)
+The 'setup' script updates the Raspbery Pi Arduino IDE (1.0.1).
+New options enable direct ISP programing of the Pi-Uno from the Arduino IDE 
+via the GPIO Uart. (/dev/ttyAMA0)
 
-Raspberry Pi OS supported:-  Noobs Rasparian option or standalone raspbarian 
+Raspberry Pi OS supported:-  Noobs Rasparian option or the standalone raspbarian 
 
 Pi-Uno Configuration:-
 Dip Switch DS1  switch 1, 2 and 3  all closed
@@ -25,7 +25,7 @@ sudo apt-get update
 sudo apt-get install arduino
 
 Download the Arduino IDE 'Pi-Uno' update from the following link:-
- https://github.com
+ https://github.com/Pi-Uno/PiUno-IDE-setup
 
 From the Pi command line unpack and install it:-
 
@@ -33,12 +33,12 @@ tar xvzf PiUno-IDE-setup.tar.gz
 cd PiUno-IDE-setup
 sudo ./setup
 
-The above lines will update the arduino IDE and get it ready to work with the Pi-Uno. 
+The above lines will update the arduino IDE and get it ready to directly work with the Pi-Uno. 
 
-The Arduino IDE will now have two additional 'Tools' options:-
-A new board option labled:- Pi-Uno
-A new Serial Port option labled:-  /dev/ttyS0
+The Arduino IDE will now have two additional options:-
+a.) A new 'Tools' board option labled:- Pi-Uno
+b.) A new 'Tools' Serial Port option labled:- /dev/ttyS0
 
 Select both of the above new options.
 
-Your now ready to upload your first Raspberry Pi Arduino IDE sketch to the Pi-Uno.
+Your now ready to 'Upload' (Ctrl+U) your first Raspberry Pi Arduino IDE sketch to the Pi-Uno.
